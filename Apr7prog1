@@ -1,0 +1,8 @@
+import csv
+l = list(range(1000))
+with open('red.csv','r')as file:
+	reader = csv.reader(file)
+	for each_row in reader:
+		l.append(each_row)
+for i in l:
+	print(each_row)
