@@ -1,5 +1,5 @@
 import openpyxl
-wb = openpyxl.load_workbook('realestatedata.xlsx')
+wb = openpyxl.load_workbook('r'C:\AIML\Term 1\Python-1204\Data files\realestatedata.xlsx')
 mysheets = wb.sheetnames
 
 print("print all sheets in Excel Workbook")
