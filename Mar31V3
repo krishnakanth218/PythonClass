@@ -17,18 +17,32 @@ print("Value of A1")
 data1 = realestatedata['A1']
 print(data1.value)
 
-print("goal = get the average of all selling prices");
-for i in range(1, 190):
-	price = realestatedata.cell(row=i, column=4).value;
-	print(price);
-	houseType = realestatedata.cell(row=i, column=1).value;
-	print(houseType);
-	description = realestatedata.cell(row=i, column=2).value;
-	print(description);
-	numberBedrooms = realestatedata.cell(row=i, column=3).value;
-	print(numberBedrooms);
+# Deposite the data in a data structure
 
-	#type, description, number of bedrooms, price
-	#houseprice = ()
+print('Goal = Store the values of "Selling price, House Type, Description, Number of Bed rooms", into data structures')
+s_price = []
+houseType = []
+description = []
+numberBedrooms = []
 
-# next goal = deposit this data into a data structure
+for i in range(2,191):
+	s_price.append(realestatedata.cell(row=i, column=4).value)
+	houseType.append(realestatedata.cell(row=i, column=1).value)
+	description.append(realestatedata.cell(row=i, column=2).value)
+	numberBedrooms.append(realestatedata.cell(row=i, column=3).value)
+
+s_price = tuple(s_price)
+houseType = tuple(houseType)
+description = tuple(description)
+numberBedrooms = tuple(numberBedrooms)
+print('Done!')
+# Average of selling price
+
+print("Goal = Print the average of Selling price")
+sum=0
+for i in s_price:
+	if(i != None):
+		sum+=i
+	else:
+		pass
+print("Average Selling price is : {:.2f} dollors".format(sum/190))
